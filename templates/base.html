@@ -1,60 +1,41 @@
 <!DOCTYPE html>
 <head>
-    <title>
-        Home page
-    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <style>
-        h1 {
-            font-size: xx-large;
-            font-family: Roboto;
-            color: rgb(0,0,0);
-            text-align: center;        
-        }
-
-        h2 {
-            
-            font-family: Roboto;
-            color: rgb(0,0,0);
-            text-align: center;
-        }
-
-        .body-text {
-            font-family: Roboto;
-            color: rgb(0,0,0);
-            text-align: center;
-        }
-
         #banner {
             width: 100%;
             height: 360px;
         }
-
-        #container {
-            max-width: 720px;
-            margin: 0 auto;
-        }
-
-
-
     </style>
+    <title>
+        Home page
+    </title>
 
 </head>
 <body>
-    <div id="container">
-        <h1>Itachi Careers</h1>
-        <img id="banner" src="{{url_for('static',filename='/images/opening.jpg')}}" height="320">
-        <h2>About Itachi</h2>
-        <p class="body-text">
+    <div class="container">
+        <h1 class="text-center mt-4 mb-4">Itachi Careers</h1>
+        <img  class="img-fluid" id="banner" src="{{url_for('static',filename='/images/opening.jpg')}}" >
+        <h2 class="text-center mt-5 mb-4" >About Itachi</h2>
+        <p class="lead">
             "The sun dipped below the horizon, painting the sky in hues of orange and pink. The gentle breeze whispered through the trees, carrying with it the scent of blooming flowers. In the distance, a lone wolf howled, its mournful cry echoing through the quiet landscape.
              As I walked along the winding path, I stumbled upon an ancient stone circle, shrouded in mystery and time. The moss-covered stones seemed to hold the secrets of generations long past. 
              I couldn't help but wonder about the stories they could tell.
              A sudden rustle in the bushes startled me, and I turned to see a curious squirrel, its bushy tail twitching with excitement. It stared at me for a moment before darting off into the underbrush.
         </p>
 
-        <h2>Job Openings</h2> 
-        <p> To do , List of jobs</p>
-        <div style="text-align: center;">
-            <button>Contact us</button>
+        <h2 class="text-center mt-5 mb-4" >Job Openings</h2> 
+        <div>
+            {%for job in jobs%}
+                {% include 'jobs.html'%}
+            {%endfor%}
+        </div>
+
+
+        <div class="text-center mt-4" >
+            <button  class="btn btn-outline-dark">Contact us</button>
         </div>
     </div>
 
