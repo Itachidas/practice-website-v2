@@ -6,7 +6,7 @@
     <style>
         #banner {
             width: 100%;
-            height: 360px;
+            height: 480px;
         }
     </style>
     <title>
@@ -15,16 +15,27 @@
 
 </head>
 <body>
+
+    {% include 'nav.html'%}
+    <img  class="img-fluid" id="banner" src="{{url_for('static',filename='/images/opening.jpg')}}" >
+
+
     <div class="container">
         <h1 class="text-center mt-4 mb-4">Itachi Careers</h1>
-        <img  class="img-fluid" id="banner" src="{{url_for('static',filename='/images/opening.jpg')}}" >
+        
         <h2 class="text-center mt-5 mb-4" >About Itachi</h2>
-        <p class="lead">
-            "The sun dipped below the horizon, painting the sky in hues of orange and pink. The gentle breeze whispered through the trees, carrying with it the scent of blooming flowers. In the distance, a lone wolf howled, its mournful cry echoing through the quiet landscape.
-             As I walked along the winding path, I stumbled upon an ancient stone circle, shrouded in mystery and time. The moss-covered stones seemed to hold the secrets of generations long past. 
-             I couldn't help but wonder about the stories they could tell.
-             A sudden rustle in the bushes startled me, and I turned to see a curious squirrel, its bushy tail twitching with excitement. It stared at me for a moment before darting off into the underbrush.
-        </p>
+        <div class="row">
+            <p class="lead col-6">
+                "The sun dipped below the horizon, painting the sky in hues of orange and pink. The gentle breeze whispered through the trees, carrying with it the scent of blooming flowers. In the distance, a lone wolf howled, its mournful cry echoing through the quiet landscape.
+                 As I walked along the winding path, I stumbled upon an ancient stone circle, shrouded in mystery and time. The moss-covered stones seemed to hold the secrets of generations long past. 
+                 I couldn't help but wonder about the stories they could tell.
+                 A sudden rustle in the bushes startled me, and I turned to see a curious squirrel, its bushy tail twitching with excitement. It stared at me for a moment before darting off into the underbrush.
+            </p>
+            <div class="img-fluid col-6" >
+                <img src="{{url_for('static',filename='/images/working.jpg')}}" height="300" width="500">
+            </div>
+        </div>
+        
 
         <h2 class="text-center mt-5 mb-4" >Job Openings</h2> 
         <div>
@@ -35,8 +46,11 @@
 
 
         <div class="text-center mt-4" >
-            <button  class="btn btn-outline-dark">Contact us</button>
+            <a  href="mailto:itachidsa@gmail.com?subject=Contacting%20you&body=As%20the%20doubts%20you%20have." type="button" class="btn btn-outline-dark">Contact us</a>
         </div>
+
+
+        {% include 'footer.html'%}
     </div>
 
 </body>
